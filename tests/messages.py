@@ -134,12 +134,12 @@ class SetProgramMessageTest(unittest.TestCase):
             0x12, 0x2b, 0x65, # rf addr
             0x01, # room
             0x01, # weekday (*cube* weekday)
-            0x40, 0x49,
+            0x20, 0x49,
         ])
         self.assertEqual(data, expected)
 
     def test_stupid_payload(self):
-        expected = bytearray([int(x, 16) for x in "00 04 10 00 00 00 12 2b 65 01 02 40 49 4c 6e 40 cb 4d 20".split()])
+        expected = bytearray([int(x, 16) for x in "00 04 10 00 00 00 12 2b 65 01 02 20 49 26 6e 20 cb 27 20".split()])
         #                                             base string | rf addr |r| d  |s1   |s2   |s3   |s4
         msg = SetProgramMessage('122b65', 1, 0, [
             ProgramSchedule(16, datetime.time(), datetime.time(6, 5)),
