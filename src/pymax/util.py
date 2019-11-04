@@ -77,7 +77,7 @@ def unpack_temp_and_time(temp_and_time):
 
 def pack_temp_and_time(temperature, time):
     temp = int(temperature * 2.0)
-    temp <<= 9
+    temp <<= 8
 
     if isinstance(time, int):
         # time = minutes
